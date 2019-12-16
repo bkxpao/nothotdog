@@ -21,8 +21,8 @@ test_transform = transforms.Compose([transforms.Resize((224, 224)),
 myTestDataset = myDataset(opt.test_path, transform=test_transform)
 myTestDataloader = DataLoader(myTestDataset, batch_size=1, shuffle=False)
 
-total = 0
-correct = 0
+# total = 0
+# correct = 0
 # true_labels = []
 # pred_labels = []
 # print('waiting...')
@@ -35,8 +35,8 @@ with torch.no_grad():
         outputs = net(image)
         _, predicted = torch.max(outputs, 1)
         # pred_labels.append(predicted.cpu().item())
-        total += label.size(0)
-        correct += (predicted == label).sum().item()
+        # total += label.size(0)
+        # correct += (predicted == label).sum().item()
 
 # print(true_labels)
         print(int(predicted.numpy()))
